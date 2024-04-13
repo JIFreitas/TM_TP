@@ -11,7 +11,7 @@ public class Player : Entity
         : base(name, race, health, attackDamage, defense, speed, mana, stamina)
     {
         level = 1; // O jogador começa no nível 1
-        experienceNeededForNextLevel = 100; // Exemplo: O jogador precisa de 100 de XP para subir ao nível 2
+        experienceNeededForNextLevel = 100;
     }
     
 
