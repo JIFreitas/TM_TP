@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class menuPrincipalManager : MonoBehaviour
 {
-    [SerializeField] private string nomeDoLevelDeJogo;
+    [SerializeField] private string Jogo;
     [SerializeField] private GameObject painelMenuInicial;
     [SerializeField] private GameObject painelOpcoes;
 
     public void Jogar(){
-        SceneManager.LoadScene(nomeDoLevelDeJogo);
+        SceneManager.LoadScene(Jogo);
     }
 
     public void AbrirOpcoes(){
