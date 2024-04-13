@@ -21,12 +21,12 @@ public class AnimatorController : MonoBehaviour
         // Define os parâmetros do Animator conforme as entradas do jogador
         animator.SetBool("IsMoving", isMoving);
 
-        // Se o jogador estiver a se mover para a direita, inverte a escala do objeto
+        // Se o jogador estiver a mover-se para a direita, inverte a escala do objeto
         if (moveInput > 0.1f)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        // Se o jogador estiver a se mover para a esquerda, inverte a escala do objeto
+        // Se o jogador estiver a mover-se para a esquerda, inverte a escala do objeto
         else if (moveInput < -0.1f)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);

@@ -9,14 +9,14 @@ public class playerMovement : MonoBehaviour
 	float _velocidadeTras;
 	float _velocidadeGirar;
 
-	//Metodo Start e executado uma unica vez, quando o script e executado.
+	// O método Start e executado uma única vez, quando o script ú executado.
 	void Start () {
 		_velocidadeFrente = 10;
 		_velocidadeTras = 5;
 		_velocidadeGirar = 60;
 	}
 
-	//Medodo Update e executado a cada Frame
+	// O médodo Update é executado a cada Frame
 	void Update () {
 		if(Input.GetKey ("w")){
 			transform.Translate(0, 0, (_velocidadeFrente * Time.deltaTime));

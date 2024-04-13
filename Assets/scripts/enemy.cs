@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class enim : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Start é chamado antes do primeiro Update do Frame
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    // Update é chamado uma vez por Frame
     void Update()
     {
         
