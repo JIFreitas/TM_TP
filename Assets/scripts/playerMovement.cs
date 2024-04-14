@@ -7,7 +7,7 @@ public class playerMovement : MonoBehaviour
 
 	float _velocidade;
 
-	// O método Start e executado uma única vez, quando o script ú executado.
+	// O método Start é executado uma única vez, quando o script é executado.
 	void Start () {
 		_velocidade = 8;
 	}

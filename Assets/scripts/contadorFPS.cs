@@ -4,10 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-
-public class contadorFps : MonoBehaviour
+public class ContadorFPS : MonoBehaviour
 {
     private TextMeshProUGUI textMesh;
+    public GameObject PauseMenu;
 
     void Start()
     {
@@ -18,10 +18,18 @@ public class contadorFps : MonoBehaviour
         {
             InvokeRepeating(nameof(CalcularFPS), 0, 1f);
         }
+    }
+
+    private void Update()
+    {
+        // Desativa o objeto com o script se o jogo estiver pausado
+        if (PauseMenu != null && PauseMenu.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
         else
         {
-            // Desliga o objeto com o script se não estiver na cena do jogo
-            gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
     }
 
