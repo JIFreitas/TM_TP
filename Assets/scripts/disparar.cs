@@ -16,24 +16,30 @@ public class disparar : MonoBehaviour
     }
 
     void Shoot()
-    {
-        // Obtém a posição do jogador
-        Vector3 playerPos = transform.position;
+{
+    // Obtém a posição do jogador
+    Vector3 playerPos = transform.position;
 
-        // Obtém a posição do cursor do mouse no plano XY do mundo
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+    // Obtém a posição do cursor do mouse no plano XY do mundo
+    Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
 
-        // Define explicitamente a posição Z da bala como 0
-        mousePos.z = 0;
+    // Define explicitamente a posição Z da bala como 0
+    mousePos.z = 0;
 
-        // Calcula a direção da bala
-        Vector3 direction = (mousePos - playerPos).normalized;
+    // Calcula a direção da bala
+    Vector3 direction = (mousePos - playerPos).normalized;
 
-        // Instancia a bala na posição do jogador
-        GameObject bullet = Instantiate(bulletPrefab, playerPos, Quaternion.identity);
+    // Define a distância entre o jogador e a bala
+    float bulletSpawnDistance = 1f; // Ajusta este valor conforme necessário
 
-        // Aplica velocidade à bala na direção do cursor do mouse
-        bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
-    }
+    // Calcula a posição inicial da bala à frente do jogador
+    Vector3 bulletSpawnPos = playerPos + direction * bulletSpawnDistance;
+
+    // Instancia a bala na posição inicial calculada
+    GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPos, Quaternion.identity);
+
+    // Aplica velocidade à bala na direção do cursor do mouse
+    bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
+}
 
 }

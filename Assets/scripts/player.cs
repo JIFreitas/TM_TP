@@ -13,7 +13,6 @@ public class Player : Entity
         level = 1; // O jogador começa no nível 1
         experienceNeededForNextLevel = 100;
     }
-    
 
     // Método para calcular o nível com base na experiência acumulada
     public void CalculateLevel()

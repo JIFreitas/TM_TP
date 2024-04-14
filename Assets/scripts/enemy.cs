@@ -1,18 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class enemy : MonoBehaviour
+
+public class Enemy : Entity
 {
-    // Start é chamado antes do primeiro Update do Frame
-    void Start()
-    {
-        
-    }
-
-    // Update é chamado uma vez por Frame
-    void Update()
-    {
-        
-    }
+    public Enemy(string entityName, string race, int health, int attackDamage, int defense, int speed, int mana, int stamina) 
+        : base(entityName, race, health, attackDamage, defense, speed, mana, stamina)
+    {}
+    
 }

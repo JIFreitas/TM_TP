@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Entity
+public abstract class Entity : MonoBehaviour
 {
-    protected string name;
+    protected string entityName;
     protected string race;
     protected int health;
     protected int attackDamage;
@@ -15,8 +15,8 @@ public abstract class Entity
     protected int experience = 0;
 
     // Construtor da classe Entity
-    public Entity(string name, string race, int health, int attackDamage, int defense, int speed, int mana, int stamina){
-        this.name = name;
+    public Entity(string entityName, string race, int health, int attackDamage, int defense, int speed, int mana, int stamina){
+        this.entityName = entityName;
         this.race = race;
         this.health = health;
         this.attackDamage = attackDamage;
@@ -31,7 +31,7 @@ public abstract class Entity
     {
         int damageDealt = Mathf.Max(0, attackDamage - target.defense);
         target.TakeDamage(damageDealt);
-        Debug.Log($"{name} atacou {target.name} e causou {damageDealt} de dano!");
+        Debug.Log($"{entityName} atacou {target.name} e causou {damageDealt} de dano!");
     }
 
     // Método para receber dano
@@ -48,13 +48,13 @@ public abstract class Entity
     public virtual void GainExperience(int amount)
     {
         experience += amount;
-        Debug.Log($"{name} ganhou {amount} de experiência!");
+        Debug.Log($"{entityName} ganhou {amount} de experiência!");
         // Adicionar aqui qualquer lógica adicional quando a entidade ganha experiência
     }
 
     // Método chamado quando a entidade morre
     protected virtual void Die()
     {
-        Debug.Log($"{name} morreu!");
+        Debug.Log($"{entityName} morreu!");
     }
 }
