@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
 
 	// O método Start e executado uma única vez, quando o script ú executado.
 	void Start () {
-		_velocidade = 10;
+		_velocidade = 8;
 	}
 
 	// O médodo Update é executado a cada Frame
