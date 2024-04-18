@@ -394,11 +394,13 @@ MonoBehaviour:
   race: Orc
   health: 100
   attackDamage: 0
+  firerate: 0
   defense: 10
-  speed: 0
+  speed: 5
   mana: 0
   stamina: 0
   experience: 0
+  enemy: {fileID: 245825535}
 --- !u!1 &508495413
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,11 +945,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       propertyPath: m_LocalRotation.y
@@ -959,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2305,6 +2307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b6d4f61624c3645b3ca39c194f38d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2113981824}
 --- !u!143 &2113981819
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2368,6 +2371,7 @@ MonoBehaviour:
   race: Human
   health: 100
   attackDamage: 10
+  firerate: 0.5
   defense: 5
   speed: 10
   mana: 0
