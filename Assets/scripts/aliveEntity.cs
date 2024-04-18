@@ -8,6 +8,7 @@ public abstract class AliveEntity : MonoBehaviour
     public string race;
     public int health;
     public int attackDamage;
+    public float firerate;
     public int defense;
     public int speed;
     public int mana;
@@ -32,7 +33,8 @@ public abstract class AliveEntity : MonoBehaviour
     // Método para receber dano
     public virtual void TakeDamage(float damage)
     {
-        health -= Mathf.RoundToInt(damage);;
+        Debug.Log($"{entityName} recebeu {damage} de dano!");
+        health -= Mathf.RoundToInt(damage);
         if (health <= 0)
         {
             Die();

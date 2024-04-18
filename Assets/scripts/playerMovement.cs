@@ -5,29 +5,28 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
 
-	float _velocidade;
+	public Player player;
 
 	// O método Start é executado uma única vez, quando o script é executado.
 	void Start () {
-		_velocidade = 8;
 	}
 
 	// O médodo Update é executado a cada Frame
 	void Update () {
 		if(Input.GetKey ("w")){
-			transform.Translate(0, (_velocidade * Time.deltaTime),0);
+			transform.Translate(0, 0, (player.speed * Time.deltaTime));
 		}
 
 		if(Input.GetKey ("s")){
-			transform.Translate(0, (-_velocidade * Time.deltaTime), 0);
+			transform.Translate(0, 0, (-player.speed * Time.deltaTime));
 		}
 
 		if(Input.GetKey ("a")){
-			transform.Translate((-_velocidade * Time.deltaTime), 0, 0);
+			transform.Translate((-player.speed * Time.deltaTime), 0, 0);
 		}
 		
 		if(Input.GetKey ("d")){
-			transform.Translate((_velocidade * Time.deltaTime), 0, 0);
+			transform.Translate((player.speed * Time.deltaTime), 0, 0);
 		}
 	}
 }

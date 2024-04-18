@@ -7,14 +7,17 @@ public class disparar : MonoBehaviour
     public Player player;
     public GameObject bulletPrefab; // Prefab da bala
     public float bulletSpeed = 10f; // Velocidade da bala
+    private float nextFire = 0.0f; // Tempo do próximo disparo
     
     // Define a distância entre o jogador e a bala
     public float bulletSpawnDistance = 1f; // Ajusta este valor conforme necessário
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) // Verifica se o botão de disparo (normalmente o botão esquerdo do mouse) foi pressionado
+       if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
+            // Atualiza o tempo do próximo disparo com base no firerate
+            nextFire = Time.time + player.firerate;
             Shoot(player.attackDamage); // Dispara uma bala
         }
     }
@@ -37,6 +40,7 @@ public class disparar : MonoBehaviour
 
         // Instancia a bala na posição inicial calculada
         GameObject bulletObject = Instantiate(bulletPrefab, bulletSpawnPos, Quaternion.identity);
+        bulletObject.name = "bullet from " + player.entityName;
         Bullet bulletComponent = bulletObject.GetComponent<Bullet>(); // Obtém o componente bullet da bala
 
         // Configura a velocidade e o dano da bala
