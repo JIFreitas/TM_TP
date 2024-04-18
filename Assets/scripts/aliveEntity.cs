@@ -9,7 +9,7 @@ public abstract class AliveEntity : MonoBehaviour
     public int health;
     public int attackDamage;
     public int defense;
-    public int speed;
+    public float speed;
     public int mana;
     public int stamina;
     public int experience = 0;
