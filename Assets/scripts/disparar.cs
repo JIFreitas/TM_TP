@@ -40,7 +40,7 @@ public class disparar : MonoBehaviour
 
         // Instancia a bala na posição inicial calculada
         GameObject bulletObject = Instantiate(bulletPrefab, bulletSpawnPos, Quaternion.identity);
-        bulletObject.name = "bullet from " + player.entityName;
+        bulletObject.name = "bullet"; // Define o nome do objeto como "bullet"
         Bullet bulletComponent = bulletObject.GetComponent<Bullet>(); // Obtém o componente bullet da bala
 
         // Configura a velocidade e o dano da bala

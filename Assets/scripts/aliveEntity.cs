@@ -45,5 +45,6 @@ public abstract class AliveEntity : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log($"{entityName} morreu!");
+        Destroy(gameObject);
     }
 }
