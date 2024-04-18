@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 96896763}
   - component: {fileID: 96896767}
   m_Layer: 0
-  m_Name: bala
+  m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 245825538}
   - component: {fileID: 245825537}
   - component: {fileID: 245825536}
+  - component: {fileID: 245825540}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -361,6 +362,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245825540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245825535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ad7c7a7153cb8418df35be5c526061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityName: Enemy
+  race: Orc
+  health: 100
+  attackDamage: 0
+  defense: 10
+  speed: 0
+  mana: 0
+  stamina: 0
+  experience: 0
 --- !u!1 &508495413
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +911,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       propertyPath: m_Name
-      value: MaleDummy
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -956,6 +978,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2113981822}
+    - targetCorrespondingSourceObject: {fileID: 100122, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2113981824}
   m_SourcePrefab: {fileID: 100100000, guid: 200dfd54095fb4446a716b087fde9c69, type: 3}
 --- !u!1 &1255057237
 GameObject:
@@ -992,7 +1017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 354.7, y: -25.4}
+  m_AnchoredPosition: {x: 354.7, y: -25.400024}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1255057239
@@ -1007,6 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c525387869412604c9dd802e287d17b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 0}
 --- !u!114 &1255057240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,8 +2059,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d88662b44ef9664590522c3551ee42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2113981824}
   bulletPrefab: {fileID: 96896762}
   bulletSpeed: 10
+  bulletSpawnDistance: 1
+--- !u!114 &2113981824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113981817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6580b2c874627846a6620519eaabc0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityName: Player
+  race: Human
+  health: 100
+  attackDamage: 10
+  defense: 5
+  speed: 10
+  mana: 0
+  stamina: 0
+  experience: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

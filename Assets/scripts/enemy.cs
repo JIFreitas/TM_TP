@@ -1,9 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-
-public class Enemy : Entity
+public class Enemy : AliveEntity
 {
-    public Enemy(string entityName, string race, int health, int attackDamage, int defense, int speed, int mana, int stamina) 
-        : base(entityName, race, health, attackDamage, defense, speed, mana, stamina)
-    {}
-    
+     void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se a colisão foi com um objeto que causa dano
+        Debug.Log("Colisão com objeto que causa dano");
+        Debug.Log(collision);
+        // // Verifica se a colisão foi com um objeto que causa dano
+        // if (collision.gameObject.CompareTag("bullet"))
+        // {
+        //     // Obtém o dano do objeto que causou a colisão
+        //     float damage = collision.gameObject.GetComponent<Bullet>().damage;
+        //     // Aplica o dano ao inimigo
+        //     TakeDamage(damage);
+        // }
+    }
 }
