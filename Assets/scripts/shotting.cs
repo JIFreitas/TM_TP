@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class disparar : MonoBehaviour
+public class Shotting : MonoBehaviour
 {
     public Player player;
     public GameObject bulletPrefab; // Prefab da bala

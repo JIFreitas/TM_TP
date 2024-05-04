@@ -22,6 +22,7 @@ public abstract class AliveEntity : MonoBehaviour
         Debug.Log($"{entityName} ganhou {amount} de experiência!");
         // Adicionar aqui qualquer lógica adicional quando a entidade ganha experiência
     }
+    
     // Método para realizar um ataque
     public virtual void Attack(AliveEntity target)
     {
